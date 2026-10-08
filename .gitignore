@@ -1,0 +1,22 @@
+# never commit game data or build products
+00_original/
+10_extracted/
+30_build/
+40_release/
+50_patch/
+60_review/
+90_test/
+third_party/xdelta/
+*.iso
+*.bin
+*.BIN
+*.ERX
+*.evd
+*.p2s
+*.ps2
+*.xdelta
+*.zip
+*.7z
+__pycache__/
+*.pyc
+.claude/

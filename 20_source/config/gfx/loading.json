@@ -1,0 +1,9 @@
+{
+ "pack": "fpack/loading.fp",
+ "chunks": {
+  "0": {"labels": [
+   {"box": [52, 53, 114, 9], "ko": "~몰락한 학원과 연금술사들~", "noanalyse": true, "th": 7, "cx": 57, "cy": 4,
+    "weight": "Bold", "fill": [235, 235, 245], "outline": [20, 30, 60], "ow": 1}
+  ]}
+ }
+}

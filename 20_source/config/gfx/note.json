@@ -1,0 +1,9 @@
+{
+ "pack": "fpack/note.fp",
+ "chunks": {
+  "4": {"weight": "Black", "labels": [
+   {"box": [9, 9, 190, 51], "ko": "보충 확정", "engrave": "all", "fill": [1, 2, 3], "outline": [1, 1, 7], "ow": 1, "shadow": [172, 200, 234, 255, -1, -1], "th": 34, "cx": 95, "cy": 25},
+   {"box": [82, 142, 90, 20], "ko": "취득 학점 수", "weight": "Bold"}
+  ]}
+ }
+}

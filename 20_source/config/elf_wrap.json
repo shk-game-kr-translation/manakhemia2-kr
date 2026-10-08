@@ -1,0 +1,228 @@
+{
+  "_doc": "Engine wrap column count per ELF string key range [lo, hi) (hex file offsets). Single-line Japanese longer than N is engine-wrapped at N full-width columns; Korean is pre-wrapped at N cells (half-width units 0.5) so the engine never re-wraps it. 'verified' marks values observed in PCSX2.",
+  "ranges": [
+    [
+      "ad8000",
+      "ae1000",
+      13,
+      "skill descriptions (Japanese pads lines with full-width spaces to 13)"
+    ],
+    [
+      "ae7000",
+      "aecd00",
+      12,
+      "equipment traits / growbook effects (ja breaks explicitly at 12; unverified)"
+    ],
+    [
+      "aecd00",
+      "b07000",
+      11,
+      "item memo window: 11 full-width columns x 5 lines (verified in PCSX2, item menu)"
+    ],
+    [
+      "b35000",
+      "b3c3d0",
+      22,
+      "quest board texts (unverified)"
+    ],
+    [
+      "b3c3d0",
+      "b47000",
+      13,
+      "student handbook memo / status lines: ja breaks lines at 13 columns (unverified in game)"
+    ],
+    [
+      "b47000",
+      "b48000",
+      22,
+      "misc messages (unverified)"
+    ],
+    [
+      "b48000",
+      "b4a000",
+      18,
+      "alchemy support effects (unverified)"
+    ],
+    [
+      "b4c780",
+      "b4c878",
+      20,
+      "character select description (verified)"
+    ],
+    [
+      "b4a620",
+      "b4ae20",
+      20,
+      "dungeon info lists (monsters / items), unverified"
+    ],
+    [
+      "b50000",
+      "b53100",
+      18,
+      "character diaries (ja breaks lines at 18 columns)"
+    ],
+    [
+      "b53100",
+      "b534a8",
+      18,
+      "diaries (cont.)"
+    ],
+    [
+      "b534a8",
+      "b56000",
+      16,
+      "growbook cards / titles (title text breaks at 16)"
+    ],
+    [
+      "b56000",
+      "b56cc0",
+      16,
+      "growbook titles (cont.)"
+    ],
+    [
+      "b56cc0",
+      "b65000",
+      20,
+      "monster book descriptions (ja breaks at 20)"
+    ],
+    [
+      "b65000",
+      "b70000",
+      21,
+      "help pages: ja breaks at 21 columns, 5 lines per page"
+    ]
+  ],
+  "_doc_lists": "list_width: [lo, hi, W, note] -- entries shown in the same window/list; a Korean entry may use up to W cells (the widest Japanese entry of the list). Applies to {F1}-prefixed names when the range also has an engine wrap width.",
+  "list_width": [
+    [
+      "b4b000",
+      "b4b360",
+      11,
+      "area/room names ({F1} map labels)"
+    ],
+    [
+      "a6ef80",
+      "a6ef88",
+      3,
+      "object particle を -> 을(를)"
+    ],
+    [
+      "aa1220",
+      "aa3300",
+      13,
+      "gallery titles"
+    ],
+    [
+      "aa72c0",
+      "aa8200",
+      13,
+      "BGM titles (longest ja 13)"
+    ],
+    [
+      "ad96f8",
+      "ae1000",
+      11,
+      "skill names (longest ja 11)"
+    ],
+    [
+      "ae1000",
+      "ae5700",
+      12,
+      "monster skill names / battle banners"
+    ],
+    [
+      "ae6b40",
+      "ae7030",
+      8,
+      "event name-box names (longest ja 8)"
+    ],
+    [
+      "b08280",
+      "b09780",
+      11,
+      "monster names (longest ja 11)"
+    ],
+    [
+      "b1d258",
+      "b1d390",
+      11,
+      "dungeon names (same as map list)"
+    ],
+    [
+      "b33000",
+      "b35000",
+      21,
+      "class/assignment objective lines (unverified; ja up to ~21)"
+    ],
+    [
+      "b4ae20",
+      "b4af60",
+      9,
+      "short alchemy/explore result labels"
+    ],
+    [
+      "b82728",
+      "b82900",
+      8,
+      "name-box names (2nd table)"
+    ],
+    [
+      "b870c8",
+      "b871a0",
+      6,
+      "aptitude / preference labels"
+    ]
+  ],
+  "_doc_lines": "max_lines: [lo, hi, L, note] -- window capacity in lines; a translation may use up to max(L, Japanese line count) lines.",
+  "max_lines": [
+    [
+      "ad96f8",
+      "ae1000",
+      4,
+      "skill description window (Japanese max 4 lines)"
+    ],
+    [
+      "ae7000",
+      "aecd00",
+      3,
+      "equipment trait descriptions (ja up to 3 explicit lines)"
+    ],
+    [
+      "aecd00",
+      "b03000",
+      5,
+      "item memo window 5 lines (verified)"
+    ],
+    [
+      "b56cc0",
+      "b65000",
+      5,
+      "monster book window: ja uses up to 5 lines of 20"
+    ],
+    [
+      "b65000",
+      "b6c000",
+      5,
+      "help page 5 lines"
+    ]
+  ],
+  "_doc_patterns": "patterns: [lo, hi, regex, N, max_lines, note] -- checked before 'ranges'; a Japanese string in [lo,hi) matching regex (re.match) uses this window width/lines.",
+  "patterns": [
+    [
+      "aecd00",
+      "b07000",
+      "\\{F1\\}対象：",
+      20,
+      4,
+      "item stat block (target/range/effect rows of two 10-col fields; ja uses up to 3-4 rows)"
+    ],
+    [
+      "aecd00",
+      "b07000",
+      "\\{F1\\}(対象：|効果：|メンバー|\\{CL..\\}・|・|敵|味方)",
+      20,
+      2,
+      "item screen effect field / stat block: 20 columns (two 10-col fields), 2 lines (verified: effect line in item menu)"
+    ]
+  ]
+}

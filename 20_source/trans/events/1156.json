@@ -1,0 +1,121 @@
+[
+ {
+  "key": "m0",
+  "kind": 5,
+  "chr": -1,
+  "jh": "3a76778d1c48",
+  "ko": "일반 전투곡을 변경하시겠습니까?"
+ },
+ {
+  "key": "m1",
+  "kind": 5,
+  "chr": -1,
+  "jh": "608109aee3a9",
+  "ko": "BGM을 선택해 주세요."
+ },
+ {
+  "key": "m2",
+  "kind": 5,
+  "chr": -1,
+  "jh": "81021be60cc4",
+  "ko": "전투 BGM을 바꾸고 싶어지면 이 캐릭터에게 말을 걸어 주세요."
+ },
+ {
+  "key": "m3",
+  "kind": 5,
+  "chr": -1,
+  "jh": "e3772828ba67",
+  "ko": "이 곡으로 하시겠습니까?"
+ },
+ {
+  "key": "m4",
+  "kind": 0,
+  "chr": 125,
+  "jh": "16284fc5eb3c",
+  "ko": "난 보잘것없는 음악가… 네가 원한다면 전투 음악을 바꿔 주지"
+ },
+ {
+  "key": "g0s0",
+  "kind": "sel",
+  "jh": "c92b4cda8bdf",
+  "ko": "예"
+ },
+ {
+  "key": "g0s1",
+  "kind": "sel",
+  "jh": "f901585367d6",
+  "ko": "아니요"
+ },
+ {
+  "key": "g1s0",
+  "kind": "sel",
+  "jh": "7132c4b2561f",
+  "ko": "{#1}{=Chaotic Moon}"
+ },
+ {
+  "key": "g1s1",
+  "kind": "sel",
+  "jh": "2cbe1e106ff3",
+  "ko": "{#1}{=Wyvern}"
+ },
+ {
+  "key": "g1s2",
+  "kind": "sel",
+  "jh": "46fe0f144aa4",
+  "ko": "{#1}{=Sacred Saber}"
+ },
+ {
+  "key": "g1s3",
+  "kind": "sel",
+  "jh": "90352fd9d68b",
+  "ko": "{#1}{=Splendid }{Fo}{=rce}"
+ },
+ {
+  "key": "g1s4",
+  "kind": "sel",
+  "jh": "54aa5bcb81f7",
+  "ko": "{#1}{=Repulsion}"
+ },
+ {
+  "key": "g1s5",
+  "kind": "sel",
+  "jh": "b918b4187bee",
+  "ko": "{#1}{=Disruptor}"
+ },
+ {
+  "key": "g1s6",
+  "kind": "sel",
+  "jh": "7b58ac4dfbef",
+  "ko": "{#1}{=The Menace}"
+ },
+ {
+  "key": "g1s7",
+  "kind": "sel",
+  "jh": "b951e91617b0",
+  "ko": "달리는 그림자"
+ },
+ {
+  "key": "g1s8",
+  "kind": "sel",
+  "jh": "31c3f3e5aa20",
+  "ko": "{#1}{=Hullucinate }{Bel}{=l}"
+ },
+ {
+  "key": "g1s9",
+  "kind": "sel",
+  "jh": "0ed12b5cdfe2",
+  "ko": "{#1}{=Crystalized}"
+ },
+ {
+  "key": "g1s10",
+  "kind": "sel",
+  "jh": "0657aad6da1a",
+  "ko": "{#1}{=Nefertiti}"
+ },
+ {
+  "key": "g1s11",
+  "kind": "sel",
+  "jh": "661d8315908f",
+  "ko": "어둠으로의 틈새"
+ }
+]

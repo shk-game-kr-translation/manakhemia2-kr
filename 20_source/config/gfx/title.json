@@ -1,0 +1,38 @@
+{
+ "pack": "fpack/title.fp",
+ "chunks": {
+  "12": {
+   "weight": "Black",
+   "labels": [
+    {
+     "box": [
+      76,
+      7,
+      110,
+      21
+     ],
+     "ko": "마나케미아",
+     "align": "center",
+     "ow": 2,
+     "th": 15,
+     "valign": "center",
+     "spacing": 4
+    },
+    {
+     "box": [
+      52,
+      69,
+      322,
+      22
+     ],
+     "ko": "~몰락한 학원과 연금술사들~",
+     "align": "center",
+     "ow": 2,
+     "th": 17,
+     "valign": "center",
+     "spacing": 3
+    }
+   ]
+  }
+ }
+}

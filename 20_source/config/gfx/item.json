@@ -1,0 +1,11 @@
+{
+ "pack": "fpack/item.fp",
+ "chunks": {
+  "2": {"weight": "Black", "fill": [40, 30, 0], "outline": [255, 240, 0], "ow": 1, "outline2": [255, 140, 0, 1], "rot": 8, "noanalyse": true, "labels": [
+   {"box": [0, 0, 36, 25], "ko": "한정", "th": 11, "cx": 18, "cy": 12, "bg": "auto", "fill": [230, 20, 0], "outline": [255, 240, 0]},
+   {"box": [81, 0, 37, 25], "ko": "이득", "th": 11, "cx": 18, "cy": 12, "bg": "auto"},
+   {"box": [0, 26, 62, 30], "ko": "재고처분", "th": 10, "cx": 31, "cy": 15, "bg": "auto"},
+   {"box": [63, 26, 57, 30], "ko": "품절", "th": 12, "cx": 28, "cy": 15, "bg": "auto"}
+  ]}
+ }
+}
