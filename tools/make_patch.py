@@ -28,7 +28,7 @@ def xdelta_exe(given=None):
                      '(https://github.com/jmacd/xdelta-gpl/releases) or on PATH')
 
 
-GUIDE = """마나케미아 2 ~오치타 학원과 연금술사들~ 한글 패치 v{ver}
+GUIDE = """마나케미아 2 ～오치타 학원과 연금술사들～ 한글 패치 v{ver}
 
 [필요한 것]
   일본판 ISO: SLPM-55005 「マナケミア2 ～おちた学園と錬金術士たち～」

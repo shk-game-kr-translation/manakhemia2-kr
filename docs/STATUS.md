@@ -12,11 +12,11 @@ Paths below written as trans/, config/ mean 20_source/trans/, 20_source/config/.
 - Files are found by name (sceCdSearchFile); RPK.BIN read as LBA(base)+sector offset.
 - RPK.BIN table: ELF file off 0x597f10, 4596 entries {name_ptr, sector_off, size}; covers whole RPK.
 - LZR codec: tools/lzr.py (decoder @0x103c4c); all 2346 LZR files decode; round trip ok.
-- EVD event scripts (1226): tools/evd.py; msgs referenced by index -> strings resizable. Pad rule (len&~3)+4.
+- EVD event scripts (1226): tools/evd.py; msgs referenced by index -> strings resizable. Pad rule `(len&~3)+4`.
 - Text: SJIS-like 2-byte units; ASCII = control codes (table @va 0x7dc840). Text fmt: tools/textfmt.py.
 - Fonts: 2 lists+24x24 4bpp glyph arrays contiguous in ELF -> merged into one font (tools/font_build.py,
   elf_font_patch.py). Kanji dropped; Hangul = KS X 1001 2350 + narrow ASCII (lead 0xEB) + kana + symbols.
-  Glyph area ends ~0x96d000; free ELF RAM 0x9a0000..0x9cc3f8 (and 0x970000..) for code/data.
+  Glyph area ends about 0x96d000; free ELF RAM 0x9a0000..0x9cc3f8 (and 0x970000..) for code/data.
 - Hooks (tools/hooks.py @0x9cc3f8): half-width units (space pair 0x20 0x20, lead 0xEB) advance half
   and do not count toward column limit in renderer, layout and line counter. Verified in event 1.
 - Event window: 13 columns/line auto wrap, 3 lines. Build wraps Korean at 13 cells (space/ASCII = 0.5).
@@ -26,7 +26,7 @@ Paths below written as trans/, config/ mean 20_source/trans/, 20_source/config/.
   data pointers / exclusive lui+addiu rewritten. Engine wraps ELF text by counting full-width units
   only, so Korean is pre-wrapped per window: 20_source/config/elf_wrap.json (ranges / patterns / max_lines /
   list_width). Verified windows: char-select description 20 cols x3; item memo 11 cols x5 (item menu);
-  item effect field ~20 cols x2; skill description 13 cols x4 (skill menu); handbook memo 13 cols (many lines);
+  item effect field about 20 cols x2; skill description 13 cols x4 (skill menu); handbook memo 13 cols (many lines);
   trait popup 12 cols (auto-sized); assignment board wide. Others (books, monster book 20x5, help 21x5,
   diaries 18, growbook titles 16) follow the Japanese line breaks but are not yet seen in game.
 - Item stat blocks ('{F1}対象：…') are generated from 20_source/config/statblock_fields.json (tools/statblock.py).
@@ -60,9 +60,9 @@ Paths below written as trans/, config/ mean 20_source/trans/, 20_source/config/.
 ## Text populations
 | population | location | volume | status |
 |---|---|---|---|
-| event dialogue | RPK Event/*.evd | 21964 msgs + 2522 choices, ~512k chars (exact) | TRANSLATED (24475/24486 entries, all unique lines; batches 20_source/batches/ev_0001..0027) — needs in-game QA |
+| event dialogue | RPK Event/*.evd | 21964 msgs + 2522 choices, about 512k chars (exact) | TRANSLATED (24475/24486 entries, all unique lines; batches 20_source/batches/ev_0001..0027) — needs in-game QA |
 | ELF UI/DB strings | SLPM_550.05 0xa6..0xb8 | 11146 entries, 251k ja chars | TRANSLATED (7621 + 3494 skipped debug/model/flag names); build ok, relocation pool 120 KB. Batches 20_source/batches/el_0001..0052 (+ .manual/.manual2) |
-| field text | erxs/QvDataE.erx (also identical /ERXS/QVDATAE.ERX on disc) | 821 strings ~21k chars | TRANSLATED (20_source/trans/erx/qvdata.json, batches 20_source/batches/erx_0001..0004*). Seen in game: map list names, NPC bubbles (auto-sized). Newspaper items (13 cols x4 + source line) not yet seen |
+| field text | erxs/QvDataE.erx (also identical /ERXS/QVDATAE.ERX on disc) | 821 strings about 21k chars | TRANSLATED (20_source/trans/erx/qvdata.json, batches 20_source/batches/erx_0001..0004*). Seen in game: map list names, NPC bubbles (auto-sized). Newspaper items (13 cols x4 + source line) not yet seen |
 | graphics text | fpack/*.fp textures (LZR chunks, TIM2/TIM) | 18 packs specced | IN PROGRESS: tools/gfxtext.py + 20_source/config/gfx/*.json (menu, font, common, battle, subject, kadai_moji, maptime, schedule, phase, note, atlas, board, compound, handbook, sugoroku, bazaar, field, title). Seen in game: title logo, 주인공 선택, 학원 지도, main menu, item/equip/status screens. res/HELP: 170 captions in 109 images done (20_source/trans/help_ko.txt + 20_source/config/help_boxes.json -> tools/helpgen.py -> 20_source/config/gfx/help.json; caption pixels removed by colour + vertical interpolation). HELP files are re-LZR'd and appended to RPK (17 grew, max +1001 B) - in-game display of a HELP page not yet seen (appear at first tutorials). Student ID card seen in game OK. Left: loading.fp logo, item.fp badges, field.fp 10, temp.fp (MK1 debug, skipped), movies |
 
 ## Runtime test harness
