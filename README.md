@@ -25,7 +25,8 @@ PS2 「マナケミア2 ～おちた学園と錬金術士たち～」(SLPM-55005
 | 메뉴·아이템·스킬·설명 (실행 파일 내 텍스트) | 7,675행 |
 | 필드 NPC 대사·지명·신문 | 821행 |
 | 그래픽 텍스트 (메뉴 제목·라벨 텍스처 476개, 도움말 이미지 109장) | 전체 |
-| 오프닝 영상 자막 | 미포함 |
+| 영상 자막 (오프닝 로고, 프롤로그·학원 개혁 영상 내레이션 21장면) | 전체 |
+| 엔딩 크레딧 (제작진 이름) | 원문 유지 |
 
 자세한 변경 내역은 [CHANGELOG.md](CHANGELOG.md).
 
@@ -35,7 +36,7 @@ PS2 「マナケミア2 ～おちた学園と錬金術士たち～」(SLPM-55005
 
 ## 직접 빌드하기 (개발자)
 
-필요: Python 3.11+, `pip install pycdlib pillow`, 원본 ISO
+필요: Python 3.11+, `pip install pycdlib pillow numpy opencv-python`, ffmpeg (PATH 또는 `third_party/ffmpeg/bin/`), 원본 ISO
 
 ```
 00_original/Mana-Khemia 2 - Ochita Gakuen to Renkinjutsushi-tachi (Japan).iso   ← 원본 ISO 를 이 이름으로 넣기
@@ -43,6 +44,10 @@ py -X utf8 tools/build.py                   → 40_release/mk2_kr_v<버전>.iso
 py -X utf8 tools/make_patch.py              → 50_patch/mk2_kr_v<버전>.xdelta   (xdelta3 필요)
 ```
 `--iso <경로>` 로 다른 위치의 원본을 지정할 수도 있습니다.
+
+영상 자막(오프닝 로고, 프롤로그 영상 2편)은 `20_source/config/movies/*.json` 을 보고 빌드 때 만들어집니다.
+원본 영상에서 일본어 자막을 지우고(앞뒤 프레임으로 배경 복원) 한국어 자막을 그린 뒤, 바뀐 구간만 다시 인코딩합니다.
+처음 한 번은 시간이 걸리고(수십 분), 이후엔 `30_build/movie/` 캐시를 씁니다. 영상 없이 빠르게 빌드하려면 `--no-movies`.
 
 ### 번역 데이터에 일본어 원문이 없는 이유
 `20_source/trans/` 의 각 항목은 한국어 번역(`ko`)과 원문 대신 **원문 해시(`jh`)** 만 가지고 있습니다.

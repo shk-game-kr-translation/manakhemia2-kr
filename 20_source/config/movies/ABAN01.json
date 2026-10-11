@@ -1,0 +1,120 @@
+{
+ "note": "Prologue movie after choosing the protagonist. Captions = event 1 narration m0-m9 (line breaks follow the original's phrase structure; they must spell the current translation).",
+ "reencode": "all",
+ "cards": [
+  {
+   "frames": [
+    157,
+    214
+   ],
+   "text": "ev:1:m0",
+   "lines": [
+    "알레비스 학원－"
+   ]
+  },
+  {
+   "frames": [
+    266,
+    429
+   ],
+   "text": "ev:1:m1",
+   "lines": [
+    "아득한 하늘에 떠 있는",
+    "외딴섬에 세워진",
+    "연금술의 최고 학부"
+   ]
+  },
+  {
+   "frames": [
+    504,
+    661
+   ],
+   "text": "ev:1:m2",
+   "lines": [
+    "과거 수많은",
+    "위대한 연금술사를 배출한",
+    "명문교로 알려져 있다"
+   ]
+  },
+  {
+   "frames": [
+    734,
+    787
+   ],
+   "text": "ev:1:m3",
+   "lines": [
+    "그러나 최근－"
+   ]
+  },
+  {
+   "frames": [
+    833,
+    1084
+   ],
+   "text": "ev:1:m4",
+   "lines": [
+    "너무나 엉성한 수업 내용과",
+    "교육자의 질 저하로",
+    "제대로 된 졸업생이 해마다 감소"
+   ]
+  },
+  {
+   "frames": [
+    1157,
+    1401
+   ],
+   "text": "ev:1:m5",
+   "lines": [
+    "설상가상으로 같은 시기,",
+    "세계에서 마나의 힘이",
+    "감소하는 사태가 발생"
+   ]
+  },
+  {
+   "frames": [
+    1472,
+    1639
+   ],
+   "text": "ev:1:m6",
+   "lines": [
+    "마나의 힘으로 하늘에 떠 있던",
+    "학원은 지상으로 추락"
+   ]
+  },
+  {
+   "frames": [
+    1711,
+    1894
+   ],
+   "text": "ev:1:m7",
+   "lines": [
+    "예전의 권위는 흔적조차",
+    "느낄 수 없는 그 모습에",
+    "입학 희망자도 격감"
+   ]
+  },
+  {
+   "frames": [
+    1936,
+    2188
+   ],
+   "text": "ev:1:m8",
+   "lines": [
+    "학원 경영을 지탱하던",
+    "출자자들도 하나둘씩",
+    "손을 떼어 가고"
+   ]
+  },
+  {
+   "frames": [
+    2240,
+    2364
+   ],
+   "text": "ev:1:m9",
+   "lines": [
+    "학원은",
+    "심각한 경영난에 직면해 있었다"
+   ]
+  }
+ ]
+}

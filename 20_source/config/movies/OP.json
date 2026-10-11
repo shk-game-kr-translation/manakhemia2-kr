@@ -1,0 +1,87 @@
+{
+ "note": "Opening movie: only the title logo's Japanese (ruby above the logo, subtitle under it). Same wording as the in-game title logo (config/gfx/title.json). The Gust company logo at the end stays.",
+ "reencode": "all",
+ "cards": [
+  {
+   "mode": "plate",
+   "frames": [
+    462,
+    528
+   ],
+   "ref": 472,
+   "plate": 462,
+   "box": [
+    180,
+    242,
+    488,
+    272
+   ],
+   "ko": "~몰락한 학원과 연금술사들~",
+   "cx": 333,
+   "cy": 257,
+   "style": {
+    "size": 20,
+    "spacing": 1,
+    "fill": [
+     26,
+     38,
+     98
+    ],
+    "stroke": 2,
+    "stroke_rgba": [
+     255,
+     255,
+     255,
+     235
+    ],
+    "shadow_rgb": [
+     255,
+     255,
+     255
+    ],
+    "shadow_blur": 2.5,
+    "shadow_alpha": 0.6
+   }
+  },
+  {
+   "mode": "inpaint",
+   "frames": [
+    428,
+    528
+   ],
+   "ref": 472,
+   "box": [
+    208,
+    186,
+    322,
+    205
+   ],
+   "ko": "마나케미아",
+   "cx": 265,
+   "cy": 196,
+   "style": {
+    "size": 12,
+    "spacing": 1,
+    "fill": [
+     255,
+     255,
+     255
+    ],
+    "stroke": 1,
+    "stroke_rgba": [
+     24,
+     44,
+     120,
+     235
+    ],
+    "shadow_rgb": [
+     24,
+     44,
+     120
+    ],
+    "shadow_blur": 1.0,
+    "shadow_alpha": 0.4
+   }
+  }
+ ]
+}

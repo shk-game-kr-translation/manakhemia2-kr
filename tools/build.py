@@ -4,7 +4,7 @@ usage: build.py [--out PATH] [--dev]
   --dev : development policy; untranslated entries keep Japanese (kana-only font => kanji
           become blank). Never produces a release candidate.
 """
-import sys, os, json, hashlib, struct, glob, argparse
+import sys, os, json, hashlib, struct, glob, argparse, subprocess
 import paths
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -93,6 +93,7 @@ def main():
     ap.add_argument('--out', default=None, help='default: 40_release/mk2_kr_v<VERSION>.iso (dev: ...-dev.iso)')
     ap.add_argument('--dev', action='store_true')
     ap.add_argument('--skip-sha', action='store_true')
+    ap.add_argument('--no-movies', action='store_true', help='keep the original movies (quick test builds)')
     ap.add_argument('--iso', default=SRC_ISO, help='original Japanese ISO (default: 00_original/...)')
     a = ap.parse_args()
     if a.out is None:
@@ -193,7 +194,23 @@ def main():
         if not a.dev:
             sys.exit(1)
     os.makedirs(os.path.dirname(a.out), exist_ok=True)
-    vol = iso_tool.build(a.iso, a.out, dict({'/SLPM_550.05;1': bytes(elf)}, **erx_files), {'/RPK.BIN;1': new_rpk})
+    # movies with burned-in captions (config/movies/*.json): rebuilt only when their cache key changes
+    # (spec, Korean text, movie tools); same size as the originals, written in place
+    movies = {}
+    if not a.no_movies:
+        import movie_build
+        for sp in sorted(glob.glob(os.path.join(paths.CONFIG, 'movies', '*.json'))):
+            name = os.path.splitext(os.path.basename(sp))[0]
+            out_p = os.path.join(paths.BUILD, 'movie', name + '.SFD')
+            key_p = os.path.join(paths.BUILD, 'movie', name + '.key')
+            key = movie_build.cache_key(name)
+            if not (os.path.exists(out_p) and os.path.exists(key_p) and open(key_p).read() == key):
+                print('movie %s: rendering Korean captions (takes a while)...' % name, flush=True)
+                subprocess.run([sys.executable, '-X', 'utf8', os.path.join(HERE, 'movie_build.py'), name], check=True)
+            movies['/MOVIE/%s.SFD;1' % name] = open(out_p, 'rb').read()
+        rep.stats['movies'] = sorted(movies)
+    vol = iso_tool.build(a.iso, a.out, dict({'/SLPM_550.05;1': bytes(elf)}, **erx_files, **movies),
+                         {'/RPK.BIN;1': new_rpk})
     print('stats', rep.stats, 'volume sectors', vol)
 
 
